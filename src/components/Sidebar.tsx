@@ -16,7 +16,7 @@ export default function Sidebar() {
           </div>
           <div>
             <h1 className="text-lg font-bold text-gray-900">DevDeck</h1>
-            <p className="text-sm text-gray-500">AI Project Management</p>
+            <p className="text-sm text-gray-500">AI Product copilot</p>
           </div>
         </div>
       </div>
