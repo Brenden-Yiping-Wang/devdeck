@@ -21,10 +21,17 @@ export default function DroppableColumn({
   tickets, 
   onStatusChange 
 }: DroppableColumnProps) {
-  const { setNodeRef, isOver } = useDroppable({
+  const { setNodeRef, isOver: isColumnOver } = useDroppable({
     id,
   });
 
+  // Check if any ticket in this column is being hovered over
+  const isAnyTicketOver = tickets.some(ticket => 
+    // This will be handled by the DraggableTicketCard's drop zone
+    false
+  );
+
+  const isOver = isColumnOver;
   return (
     <div 
       ref={setNodeRef}

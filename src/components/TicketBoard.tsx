@@ -57,6 +57,9 @@ export default function TicketBoard({ tickets, onStatusChange, onGenerateClick }
     // Check if dropped directly on a column
     if (over.id === 'todo' || over.id === 'in-progress' || over.id === 'done') {
       newStatus = over.id as Ticket['status'];
+    } else if (over.data?.current?.type === 'ticket-drop-zone') {
+      // Dropped on a ticket's drop zone
+      newStatus = over.data.current.status as Ticket['status'];
     } else {
       // If dropped on a ticket, move to that ticket's column
       const targetTicket = tickets.find(t => t.id === over.id);
