@@ -11,7 +11,7 @@ export default function Sidebar() {
             <img 
               src="/logo.png" 
               alt="DevDeck Logo" 
-              className="h-12 w-12 rounded-lg"
+              className="h-16 w-16 rounded-lg"
             />
           </div>
           <div>
