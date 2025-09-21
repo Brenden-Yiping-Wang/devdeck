@@ -20,17 +20,19 @@ export default function BoardPage() {
   };
 
   return (
-    <>
+    <div className="flex flex-col h-full">
       <BoardHeader 
         onGenerateClick={() => setIsModalOpen(true)}
         currentProject={currentProject?.title || null}
       />
       
-      <TicketBoard 
-        tickets={tickets} 
-        onStatusChange={handleStatusChange}
-        onGenerateClick={() => setIsModalOpen(true)}
-      />
+      <div className="flex-1 overflow-hidden">
+        <TicketBoard 
+          tickets={tickets} 
+          onStatusChange={handleStatusChange}
+          onGenerateClick={() => setIsModalOpen(true)}
+        />
+      </div>
       
       <AIGenerateModal
         isOpen={isModalOpen}
@@ -38,6 +40,6 @@ export default function BoardPage() {
         onSubmit={onRequestSubmit}
         isProcessing={isProcessing}
       />
-    </>
+    </div>
   );
 }

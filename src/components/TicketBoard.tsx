@@ -78,7 +78,7 @@ export default function TicketBoard({ tickets, onStatusChange, onGenerateClick }
 
   if (tickets.length === 0) {
     return (
-      <div className="flex-1 flex items-center justify-center p-8">
+      <div className="h-full flex items-center justify-center p-8">
         <div className="text-center max-w-md">
           <div className="text-gray-400 mb-6">
             <ListTodo className="h-16 w-16 mx-auto" />
@@ -104,7 +104,7 @@ export default function TicketBoard({ tickets, onStatusChange, onGenerateClick }
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div className="flex-1 p-6">
+      <div className="h-full p-6 overflow-y-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
           {columns.map((column) => {
             const columnTickets = tickets.filter(ticket => ticket.status === column.status);

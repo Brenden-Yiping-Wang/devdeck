@@ -4,7 +4,7 @@ import { LayoutGrid } from 'lucide-react';
 
 export default function Sidebar() {
   return (
-    <div className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col">
+    <div className="w-64 bg-white border-r border-gray-200 h-full flex flex-col flex-shrink-0">
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center space-x-3">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
@@ -34,12 +34,6 @@ export default function Sidebar() {
           </NavLink>
         </div>
       </nav>
-      
-      <div className="p-4 border-t border-gray-200">
-        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-2 rounded-lg text-xs font-medium text-center">
-          MVP Version
-        </div>
-      </div>
     </div>
   );
 }
