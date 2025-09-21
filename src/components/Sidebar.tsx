@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { LayoutGrid } from 'lucide-react';
 
 export default function Sidebar() {
@@ -18,10 +19,19 @@ export default function Sidebar() {
       
       <nav className="flex-1 p-4">
         <div className="space-y-1">
-          <div className="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg flex items-center space-x-3 font-medium">
+          <NavLink
+            to="/board"
+            className={({ isActive }) =>
+              `px-3 py-2 rounded-lg flex items-center space-x-3 font-medium transition-colors ${
+                isActive
+                  ? 'bg-blue-50 text-blue-700'
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+              }`
+            }
+          >
             <LayoutGrid className="h-4 w-4" />
             <span>Board</span>
-          </div>
+          </NavLink>
         </div>
       </nav>
       

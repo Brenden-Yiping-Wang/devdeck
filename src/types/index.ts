@@ -14,3 +14,9 @@ export interface ProjectRequest {
   description: string;
   createdAt: Date;
 }
+
+export interface AppState {
+  tickets: Ticket[];
+  currentProject: ProjectRequest | null;
+  isProcessing: boolean;
+}
