@@ -28,7 +28,7 @@ export default function DroppableColumn({
   return (
     <div 
       ref={setNodeRef}
-      className={`bg-gray-50 rounded-xl p-4 flex flex-col transition-all duration-300 ease-out ${
+      className={`bg-gray-50 rounded-xl p-4 flex flex-col transition-all duration-300 ease-out min-h-[400px] ${
         isOver ? 'bg-gradient-to-br from-blue-50 to-indigo-50 ring-2 ring-blue-300 shadow-lg scale-[1.02]' : 'hover:bg-gray-100'
       }`}
     >
@@ -42,7 +42,7 @@ export default function DroppableColumn({
         </span>
       </div>
       
-      <div className={`space-y-3 flex-1 min-h-[200px] transition-all duration-300 ${
+      <div className={`space-y-3 flex-1 transition-all duration-300 ${
         isOver ? 'scale-[1.01]' : ''
       }`}>
         <SortableContext items={tickets.map(t => t.id)} strategy={verticalListSortingStrategy}>
