@@ -9,7 +9,7 @@ export default function Sidebar() {
         <div className="flex items-center space-x-3">
           <div className="flex-shrink-0">
             <img 
-              src="/DevDeck_logo.png" 
+              src="/logo.png" 
               alt="DevDeck Logo" 
               className="h-12 w-12 rounded-lg"
             />
