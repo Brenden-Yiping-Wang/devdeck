@@ -49,13 +49,16 @@ export default function TicketBoard({ tickets, onStatusChange, onGenerateClick }
     if (!over) return;
     
     const ticketId = active.id as string;
+    const ticket = tickets.find(t => t.id === ticketId);
+    if (!ticket) return;
     
-    // Handle dropping on column or ticket
     let newStatus: Ticket['status'];
+    
+    // Check if dropped directly on a column
     if (over.id === 'todo' || over.id === 'in-progress' || over.id === 'done') {
       newStatus = over.id as Ticket['status'];
     } else {
-      // If dropped on a ticket, find which column that ticket is in
+      // If dropped on a ticket, move to that ticket's column
       const targetTicket = tickets.find(t => t.id === over.id);
       if (targetTicket) {
         newStatus = targetTicket.status;
@@ -64,9 +67,8 @@ export default function TicketBoard({ tickets, onStatusChange, onGenerateClick }
       }
     }
     
-    // Only update if the status actually changed
-    const ticket = tickets.find(t => t.id === ticketId);
-    if (ticket && ticket.status !== newStatus) {
+    // Update status if it changed
+    if (ticket.status !== newStatus) {
       onStatusChange(ticketId, newStatus);
     }
   };
