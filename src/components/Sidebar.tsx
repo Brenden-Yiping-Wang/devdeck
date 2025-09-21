@@ -7,8 +7,12 @@ export default function Sidebar() {
     <div className="w-64 bg-white border-r border-gray-200 h-full flex flex-col flex-shrink-0">
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center space-x-3">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
-            <LayoutGrid className="h-5 w-5 text-white" />
+          <div className="flex-shrink-0">
+            <img 
+              src="/DevDeck_logo.png" 
+              alt="DevDeck Logo" 
+              className="h-8 w-8 rounded-lg"
+            />
           </div>
           <div>
             <h1 className="text-lg font-bold text-gray-900">DevDeck</h1>
