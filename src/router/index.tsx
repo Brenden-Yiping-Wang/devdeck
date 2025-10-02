@@ -1,30 +1,50 @@
 import React from 'react';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 import Layout from '../components/Layout';
 import BoardPage from '../pages/BoardPage';
+import LoginPage from '../pages/LoginPage';
+import SignupPage from '../pages/SignupPage';
+import ProtectedRoute from '../components/ProtectedRoute';
+import { AuthProvider } from '../contexts/AuthContext';
+
+function RootLayout() {
+  return (
+    <AuthProvider>
+      <Outlet />
+    </AuthProvider>
+  );
+}
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Layout />,
+    element: <RootLayout />,
     children: [
       {
-        index: true,
-        element: <Navigate to="/board" replace />,
+        path: '/login',
+        element: <LoginPage />,
       },
       {
-        path: 'board',
-        element: <BoardPage />,
+        path: '/signup',
+        element: <SignupPage />,
       },
-      // Future routes can be added here:
-      // {
-      //   path: 'settings',
-      //   element: <SettingsPage />,
-      // },
-      // {
-      //   path: 'analytics',
-      //   element: <AnalyticsPage />,
-      // },
+      {
+        path: '/',
+        element: <Layout />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="/board" replace />,
+          },
+          {
+            path: 'board',
+            element: (
+              <ProtectedRoute>
+                <BoardPage />
+              </ProtectedRoute>
+            ),
+          },
+        ],
+      },
     ],
   },
 ]);
