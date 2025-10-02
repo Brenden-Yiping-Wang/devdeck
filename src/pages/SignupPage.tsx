@@ -59,7 +59,7 @@ export default function SignupPage() {
           <div className="mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4 flex items-center gap-3">
               Welcome to
-              <img src="/ChatGPT Image Oct 2, 2025, 07_05_11 PM.png" alt="DevDeck Logo" className="h-12" />
+              <img src="/ChatGPT Image Oct 2, 2025, 07_05_11 PM.png" alt="DevDeck Logo" className="h-16" />
               DevDeck
             </h1>
             <p className="text-lg text-gray-600">
