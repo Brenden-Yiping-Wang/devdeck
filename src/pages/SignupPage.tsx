@@ -57,7 +57,6 @@ export default function SignupPage() {
       <div className="flex-1 flex items-center justify-center p-8 bg-white">
         <div className="w-full max-w-md">
           <div className="mb-8">
-            <img src="/logo.png" alt="DevDeck" className="h-20 w-20 mb-6" />
             <h1 className="text-4xl font-bold text-gray-900 mb-2">
               Get started
             </h1>
