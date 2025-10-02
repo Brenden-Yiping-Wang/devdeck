@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, Layers } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -43,11 +43,15 @@ export default function LoginPage() {
     <div className="min-h-screen flex">
       <div className="flex-1 flex items-center justify-center p-8 bg-white">
         <div className="w-full max-w-md">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <div className="mb-12">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <Layers className="w-10 h-10 text-blue-600" />
+              <span className="text-2xl font-bold text-gray-900">DevDeck</span>
+            </div>
+            <h1 className="text-5xl font-bold text-gray-900 mb-3">
               Welcome back
             </h1>
-            <p className="text-gray-600">
+            <p className="text-lg text-gray-600">
               Sign in to continue to DevDeck
             </p>
           </div>
