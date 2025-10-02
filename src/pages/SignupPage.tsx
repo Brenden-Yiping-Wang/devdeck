@@ -57,13 +57,11 @@ export default function SignupPage() {
       <div className="flex-1 flex items-center justify-center p-8 bg-white">
         <div className="w-full max-w-md">
           <div className="mb-12">
-            <div className="mb-4">
-              <div className="text-5xl font-normal text-gray-800 mb-2">Welcome to</div>
-              <div className="flex items-center gap-3">
-                <img src="/ChatGPT Image Oct 2, 2025, 07_05_11 PM.png" alt="DevDeck Logo" className="h-16" />
-                <span className="text-5xl font-bold text-gray-900">DevDeck</span>
-              </div>
-            </div>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+              Welcome to
+              <img src="/ChatGPT Image Oct 2, 2025, 07_05_11 PM.png" alt="DevDeck Logo" className="h-12" />
+              DevDeck
+            </h1>
             <p className="text-lg text-gray-600">
               Get started - it's free. No credit card needed.
             </p>
