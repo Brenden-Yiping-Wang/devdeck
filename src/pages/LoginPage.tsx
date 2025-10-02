@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, CheckCircle2, Layers } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -44,15 +44,11 @@ export default function LoginPage() {
       <div className="flex-1 flex items-center justify-center p-8 bg-white">
         <div className="w-full max-w-md">
           <div className="mb-12">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <Layers className="w-10 h-10 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-900">DevDeck</span>
-            </div>
-            <h1 className="text-5xl font-bold text-gray-900 mb-3">
-              Welcome back
+            <h1 className="text-5xl font-normal text-gray-800 mb-4 flex items-center gap-3">
+              Welcome to <img src="/ChatGPT Image Oct 2, 2025, 06_54_32 PM.png" alt="DevDeck Logo" className="h-14 inline-block" /> <span className="font-bold text-gray-900">DevDeck</span>
             </h1>
             <p className="text-lg text-gray-600">
-              Sign in to continue to DevDeck
+              Get started - it's free. No credit card needed.
             </p>
           </div>
 
