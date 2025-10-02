@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay-1 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-float-delay-2 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+}
