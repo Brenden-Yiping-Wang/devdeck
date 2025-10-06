@@ -79,19 +79,28 @@ export default function TicketBoard({ tickets, onStatusChange, onGenerateClick }
   if (tickets.length === 0) {
     return (
       <div className="h-full flex items-center justify-center p-8">
-        <div className="text-center max-w-md">
-          <div className="text-gray-400 mb-6">
-            <ListTodo className="h-16 w-16 mx-auto" />
+        <div className="text-center max-w-lg">
+          <div className="relative mb-8">
+            <div className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-400/20 to-emerald-400/20 rounded-full"></div>
+            <div className="relative bg-gradient-to-br from-blue-50 to-emerald-50 rounded-3xl p-12 border-2 border-blue-100">
+              <Sparkles className="h-20 w-20 mx-auto text-blue-600 mb-4" />
+            </div>
           </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">No tickets yet</h3>
-          <p className="text-gray-500 mb-6">Get started by generating tickets with AI. Describe your project idea and let our AI break it down into manageable tasks.</p>
+          <h3 className="text-3xl font-bold text-gray-900 mb-3">Start Your First Project</h3>
+          <p className="text-lg text-gray-600 mb-8">
+            Describe your project idea and our AI will instantly break it down into actionable development tickets.
+          </p>
           <button
             onClick={onGenerateClick}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 mx-auto"
+            className="relative group bg-gradient-to-r from-blue-600 to-emerald-600 text-white px-8 py-4 rounded-xl font-semibold text-lg flex items-center space-x-3 hover:from-blue-700 hover:to-emerald-700 transition-all duration-300 mx-auto shadow-xl hover:shadow-2xl transform hover:scale-105"
           >
-            <Sparkles className="h-4 w-4" />
-            <span>Generate Your First Tickets</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-emerald-400 rounded-xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
+            <Sparkles className="h-6 w-6 relative animate-pulse" />
+            <span className="relative">Generate Tickets with AI</span>
           </button>
+          <p className="text-sm text-gray-500 mt-6">
+            Powered by advanced AI to help you plan better
+          </p>
         </div>
       </div>
     );
