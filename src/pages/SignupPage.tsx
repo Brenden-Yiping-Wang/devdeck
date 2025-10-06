@@ -28,6 +28,13 @@ export default function SignupPage() {
     setLoading(true);
 
     setTimeout(() => {
+      const mockUser = {
+        id: '1',
+        email: email,
+        name: name || email.split('@')[0],
+      };
+      localStorage.setItem('token', 'mock-token');
+      localStorage.setItem('user', JSON.stringify(mockUser));
       navigate('/board');
       setLoading(false);
     }, 500);
