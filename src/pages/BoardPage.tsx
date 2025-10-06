@@ -19,21 +19,24 @@ export default function BoardPage() {
     await handleRequestSubmit(title, description);
   };
 
+  const hasTickets = tickets.length > 0;
+
   return (
     <div className="flex flex-col h-full">
-      <BoardHeader 
+      <BoardHeader
         onGenerateClick={() => setIsModalOpen(true)}
         currentProject={currentProject?.title || null}
+        showGenerateButton={hasTickets}
       />
-      
+
       <div className="flex-1 overflow-hidden">
-        <TicketBoard 
-          tickets={tickets} 
+        <TicketBoard
+          tickets={tickets}
           onStatusChange={handleStatusChange}
           onGenerateClick={() => setIsModalOpen(true)}
         />
       </div>
-      
+
       <AIGenerateModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

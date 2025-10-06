@@ -142,9 +142,6 @@ export default function TicketBoard({ tickets, onStatusChange, onGenerateClick }
               <Sparkles className="h-6 w-6 relative animate-pulse" />
               <span className="relative">Generate Tickets with AI</span>
             </button>
-            <p className="text-sm text-gray-500 mt-6">
-              Powered by advanced AI to help you plan better
-            </p>
           </div>
         </div>
       </div>
