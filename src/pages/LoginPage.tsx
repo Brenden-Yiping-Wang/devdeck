@@ -14,29 +14,10 @@ export default function LoginPage() {
     setError('');
     setLoading(true);
 
-    try {
-      const response = await fetch('http://18.191.134.16:8000/api/v1/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Login failed');
-      }
-
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+    setTimeout(() => {
       navigate('/board');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
-    } finally {
       setLoading(false);
-    }
+    }, 500);
   };
 
   return (
