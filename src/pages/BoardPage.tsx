@@ -15,8 +15,8 @@ export default function BoardPage() {
   } = useTickets();
 
   const onRequestSubmit = async (title: string, description: string) => {
-    setIsModalOpen(false);
     await handleRequestSubmit(title, description);
+    setIsModalOpen(false);
   };
 
   const hasTickets = tickets.length > 0;
