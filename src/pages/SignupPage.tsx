@@ -27,29 +27,10 @@ export default function SignupPage() {
 
     setLoading(true);
 
-    try {
-      const response = await fetch('https://18.191.134.16:8000/api/v1/auth/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password, name }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Signup failed');
-      }
-
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+    setTimeout(() => {
       navigate('/board');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
-    } finally {
       setLoading(false);
-    }
+    }, 500);
   };
 
   return (
