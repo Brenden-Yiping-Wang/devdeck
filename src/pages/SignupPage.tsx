@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowRight, Zap, Target, TrendingUp } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ export default function SignupPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,8 +35,7 @@ export default function SignupPage() {
         email: email,
         name: name || email.split('@')[0],
       };
-      localStorage.setItem('token', 'mock-token');
-      localStorage.setItem('user', JSON.stringify(mockUser));
+      login('mock-token', mockUser);
       navigate('/board');
       setLoading(false);
     }, 500);
